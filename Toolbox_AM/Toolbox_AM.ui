@@ -1,0 +1,583 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.1">
+  <object class="tk.Toplevel" id="Main">
+    <property name="geometry">1024x768</property>
+    <property name="height">768</property>
+    <property name="resizable">none</property>
+    <property name="width">1024</property>
+    <child>
+      <object class="tk.Frame" id="Verde">
+        <property name="height">768</property>
+        <property name="width">256</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="sticky">nsew</property>
+          <property type="col" id="0" name="minsize">256</property>
+          <property type="col" id="0" name="pad">0</property>
+          <property type="col" id="0" name="weight">1</property>
+          <property type="row" id="0" name="minsize">0</property>
+        </layout>
+        <child>
+          <object class="tk.Label" id="label1">
+            <property name="text" translatable="yes">Bases de Dados</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="rowspan">1</property>
+              <property name="sticky">new</property>
+              <property type="col" id="0" name="minsize">250</property>
+              <property type="col" id="0" name="weight">1</property>
+              <property type="row" id="0" name="minsize">0</property>
+              <property type="row" id="0" name="pad">6</property>
+              <property type="row" id="0" name="weight">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Listbox" id="listBoxBases">
+            <property name="exportselection">false</property>
+            <property name="justify">right</property>
+            <property name="selectmode">multiple</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+              <property name="sticky">nsew</property>
+              <property type="col" id="0" name="minsize">250</property>
+              <property type="col" id="0" name="weight">1</property>
+              <property type="row" id="1" name="minsize">740</property>
+              <property type="row" id="1" name="pad">6</property>
+              <property type="row" id="1" name="weight">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Frame" id="Vermelho">
+        <property name="height">768</property>
+        <property name="width">256</property>
+        <layout manager="grid">
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="sticky">nsew</property>
+          <property type="col" id="1" name="minsize">256</property>
+          <property type="col" id="1" name="pad">0</property>
+          <property type="col" id="1" name="weight">1</property>
+          <property type="col" id="2" name="minsize">200</property>
+          <property type="col" id="2" name="pad">6</property>
+          <property type="row" id="0" name="minsize">0</property>
+        </layout>
+        <child>
+          <object class="tk.Label" id="label2">
+            <property name="font">TkDefaultFont</property>
+            <property name="text" translatable="yes">Escolha o Tipo de Problema</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">new</property>
+              <property type="col" id="0" name="minsize">250</property>
+              <property type="col" id="0" name="pad">0</property>
+              <property type="col" id="0" name="weight">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Combobox" id="comboboxTipoProblema">
+            <bind sequence="&lt;&lt;ComboboxSelected&gt;&gt;" handler="validateComboBox" add="" />
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+              <property name="sticky">new</property>
+              <property type="col" id="0" name="minsize">250</property>
+              <property type="col" id="0" name="pad">0</property>
+              <property type="col" id="0" name="weight">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label3">
+            <property name="text" translatable="yes">Métodos Disponíveis</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="0" name="minsize">250</property>
+              <property type="col" id="0" name="pad">0</property>
+              <property type="col" id="0" name="weight">1</property>
+              <property type="row" id="2" name="pad">5</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Listbox" id="listBoxMetodos">
+            <property name="cursor">arrow</property>
+            <property name="exportselection">false</property>
+            <property name="justify">right</property>
+            <property name="selectmode">multiple</property>
+            <property name="width">250</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">3</property>
+              <property name="sticky">nsew</property>
+              <property type="col" id="0" name="minsize">250</property>
+              <property type="col" id="0" name="pad">0</property>
+              <property type="col" id="0" name="weight">1</property>
+              <property type="row" id="3" name="minsize">700</property>
+              <property type="row" id="3" name="pad">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Frame" id="Preto">
+        <property name="height">768</property>
+        <property name="width">256</property>
+        <layout manager="grid">
+          <property name="column">3</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="sticky">nsew</property>
+          <property type="col" id="2" name="minsize">200</property>
+          <property type="col" id="2" name="pad">3</property>
+          <property type="col" id="3" name="minsize">256</property>
+          <property type="col" id="3" name="pad">0</property>
+          <property type="col" id="3" name="weight">0</property>
+          <property type="col" id="4" name="minsize">250</property>
+          <property type="col" id="4" name="pad">6</property>
+          <property type="col" id="4" name="weight">0</property>
+          <property type="row" id="0" name="minsize">0</property>
+        </layout>
+        <child>
+          <object class="tk.Listbox" id="listBoxMetricas">
+            <property name="cursor">arrow</property>
+            <property name="exportselection">false</property>
+            <property name="height">22</property>
+            <property name="justify">right</property>
+            <property name="selectmode">multiple</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+              <property name="sticky">nsew</property>
+              <property type="col" id="0" name="minsize">250</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label18">
+            <property name="text" translatable="yes">Apresentação dos Resultados</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="0" name="minsize">250</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Listbox" id="listBoxResultados">
+            <property name="exportselection">false</property>
+            <property name="selectmode">multiple</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">3</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="0" name="minsize">250</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label19">
+            <property name="text" translatable="yes">Progresso:</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">7</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="0" name="minsize">250</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label20">
+            <property name="text" translatable="yes">Métricas</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="0" name="minsize">250</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Progressbar" id="barraProgresso">
+            <property name="maximum">100</property>
+            <property name="orient">horizontal</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">8</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="0" name="minsize">250</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="botaoIniciarTeste">
+            <property name="command" type="command" cbtype="simple">iniciarExperimento</property>
+            <property name="text" translatable="yes">Iniciar Experimento</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">4</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="0" name="minsize">250</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="button3">
+            <property name="command" type="command" cbtype="simple">salvarEstado</property>
+            <property name="text" translatable="yes">Salvar Configuraçõoes</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">5</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="0" name="minsize">250</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="button4">
+            <property name="command" type="command" cbtype="simple">carregarEstado</property>
+            <property name="text" translatable="yes">Carregar Configurações</property>
+            <layout manager="grid">
+              <property name="propagate">True</property>
+              <property name="row">6</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="0" name="minsize">250</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Frame" id="Azul">
+        <property name="height">768</property>
+        <property name="width">256</property>
+        <layout manager="grid">
+          <property name="column">2</property>
+          <property name="columnspan">1</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="sticky">nsew</property>
+          <property type="col" id="2" name="minsize">256</property>
+          <property type="col" id="2" name="pad">0</property>
+          <property type="col" id="2" name="weight">1</property>
+          <property type="col" id="3" name="minsize">200</property>
+          <property type="col" id="3" name="pad">6</property>
+          <property type="row" id="0" name="minsize">0</property>
+        </layout>
+        <child>
+          <object class="tk.Label" id="label33">
+            <property name="text" translatable="yes">Hiperparâmetros dos Métodos</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="columnspan">2</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="rowspan">1</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="0" name="minsize">175</property>
+              <property type="col" id="0" name="weight">1</property>
+              <property type="row" id="0" name="minsize">20</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="botaoConfigParametros">
+            <property name="command" type="command" cbtype="simple">abreMenuParametros</property>
+            <property name="text" translatable="yes">Configuração dos Hiperparâmetros</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="columnspan">2</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="0" name="minsize">175</property>
+              <property type="col" id="0" name="weight">1</property>
+              <property type="row" id="1" name="minsize">20</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label34">
+            <property name="text" translatable="yes">Escolha da Validação Cruzada</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="columnspan">2</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+              <property name="sticky">nsew</property>
+              <property type="col" id="0" name="minsize">175</property>
+              <property type="col" id="0" name="weight">1</property>
+              <property type="row" id="2" name="minsize">20</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Listbox" id="listBoxValidacao">
+            <property name="exportselection">false</property>
+            <property name="font">TkDefaultFont</property>
+            <property name="selectmode">single</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="columnspan">2</property>
+              <property name="propagate">True</property>
+              <property name="row">3</property>
+              <property name="rowspan">1</property>
+              <property name="sticky">nsew</property>
+              <property type="col" id="0" name="minsize">175</property>
+              <property type="col" id="0" name="weight">1</property>
+              <property type="row" id="3" name="minsize">250</property>
+              <property type="row" id="3" name="weight">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label35">
+            <property name="text" translatable="yes">Outras configurações do Experimento</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="columnspan">2</property>
+              <property name="propagate">True</property>
+              <property name="row">4</property>
+              <property type="col" id="0" name="minsize">175</property>
+              <property type="col" id="0" name="weight">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label36">
+            <property name="text" translatable="yes">% Dados para treino</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">5</property>
+              <property name="rowspan">2</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="0" name="minsize">175</property>
+              <property type="col" id="0" name="weight">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label37">
+            <property name="text" translatable="yes">% Dados para validação 
+(hold-out)</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">7</property>
+              <property name="rowspan">2</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="0" name="minsize">175</property>
+              <property type="col" id="0" name="weight">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Entry" id="entradaDadosTreino">
+            <property name="justify">right</property>
+            <property name="takefocus">true</property>
+            <property name="text" translatable="yes">80</property>
+            <property name="width">10</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">5</property>
+              <property name="rowspan">2</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="1" name="minsize">75</property>
+              <property type="col" id="1" name="weight">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Entry" id="entradaDadosValidacaoHoldout">
+            <property name="justify">right</property>
+            <property name="text" translatable="yes">0</property>
+            <property name="width">10</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">7</property>
+              <property name="rowspan">2</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="1" name="minsize">75</property>
+              <property type="col" id="1" name="weight">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label38">
+            <property name="text" translatable="yes">% Dados para Teste
+</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">9</property>
+              <property name="rowspan">2</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="0" name="minsize">175</property>
+              <property type="col" id="0" name="weight">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Entry" id="entradaDadosTeste">
+            <property name="justify">right</property>
+            <property name="text" translatable="yes">20</property>
+            <property name="validate">none</property>
+            <property name="width">10</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">9</property>
+              <property name="rowspan">2</property>
+              <property name="sticky">new</property>
+              <property type="col" id="1" name="minsize">75</property>
+              <property type="col" id="1" name="weight">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label39">
+            <property name="text" translatable="yes">Número de Repetições</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">11</property>
+              <property name="rowspan">2</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="0" name="minsize">175</property>
+              <property type="col" id="0" name="weight">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Entry" id="entradaNumRepeticoes">
+            <property name="justify">right</property>
+            <property name="text" translatable="yes">5</property>
+            <property name="width">10</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">11</property>
+              <property name="rowspan">2</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="1" name="minsize">75</property>
+              <property type="col" id="1" name="weight">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label40">
+            <property name="text" translatable="yes">Semente Pseudoaleatória
+Inicial</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">13</property>
+              <property name="rowspan">2</property>
+              <property name="sticky">nsew</property>
+              <property type="col" id="0" name="minsize">175</property>
+              <property type="col" id="0" name="weight">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Entry" id="entradaSementeAleatoria">
+            <property name="justify">right</property>
+            <property name="text" translatable="yes">12345</property>
+            <property name="validate">none</property>
+            <property name="width">10</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">13</property>
+              <property name="rowspan">2</property>
+              <property name="sticky">ew</property>
+              <property type="col" id="1" name="minsize">75</property>
+              <property type="col" id="1" name="weight">1</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="tk.Toplevel" id="Params">
+    <property name="geometry">640x480</property>
+    <property name="height">480</property>
+    <property name="resizable">none</property>
+    <property name="width">640</property>
+    <child>
+      <object class="tk.Frame" id="frame1">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="sticky">nsew</property>
+          <property type="col" id="0" name="minsize">320</property>
+          <property type="col" id="0" name="weight">1</property>
+          <property type="row" id="0" name="weight">11</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Button" id="botaoFinalizarConfigParams">
+        <property name="command" type="command" cbtype="simple">finalizarConfigParams</property>
+        <property name="text" translatable="yes">Finalizar</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+          <property name="sticky">nsew</property>
+          <property type="col" id="0" name="minsize">320</property>
+          <property type="col" id="0" name="weight">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Button" id="botaoCancelarConfigParams">
+        <property name="command" type="command" cbtype="simple">cancelarConfigParams</property>
+        <property name="text" translatable="yes">Cancelar</property>
+        <layout manager="grid">
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+          <property name="sticky">nsew</property>
+          <property type="col" id="1" name="minsize">320</property>
+          <property type="col" id="1" name="weight">1</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+</interface>

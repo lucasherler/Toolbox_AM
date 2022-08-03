@@ -1,0 +1,33 @@
+#Attribute 1 is the class label.
+#
+#All predictive attributes are nominal, taking on integer values 0-3
+
+import numpy as np
+import pandas as pd
+
+
+def one_hot_encoding(x):
+    values = np.unique(x).tolist()
+    # print(type(values))
+    encoded = np.zeros([x.shape[0],len(values)])
+    for i in range(x.shape[0]):
+        encoded[i,values.index(x[i])] = 1
+    return encoded
+        
+
+def read():
+    # print("\n LEU IRIS")
+    df = pd.read_csv('iris.data',names=range(0,5))
+    # df['Class'] = df['Class'].transform(transform)
+    df = df.to_numpy()
+
+    # onehot_encoder = OneHotEncoder(sparse=False)
+    # onehot_encoded = onehot_encoder.fit_transform(df[:,8])
+    return (df[:,:-1].astype(float),one_hot_encoding(df[:,-1]))
+
+def is_regression():
+    return False
+
+
+if __name__ == '__main__':
+    df = read()
